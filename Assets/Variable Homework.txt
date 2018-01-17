@@ -1,0 +1,78 @@
+ //Variable Homework
+
+            int speed = 4;
+
+            //This is setting the variable "speed" to the number 4
+            //This is an integer variable
+            //I can also write this
+
+            double yolo = 4.05;
+
+            /*This is saying that the variable is a double and also assigning it a value
+            An example of a bad variable:
+            int speed = 4.05
+            4.05 is not an int so this will not work
+            */
+
+            int fast = 4;
+            int veryFast = 7;
+            int running = fast + veryFast;
+            int runningVeryFast = 4 + 7;
+
+            //running and runningVeryFast are equal variables, just achieved through two different means
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+//public vs private
+//public means other classes can access
+//private means that it means it CANT be accessed through other scripts
+
+public class moveObject : MonoBehaviour {
+    public float horizontalSpeed = .2f;
+    public float verticalSpeed = .2f;
+    public float zSpeed = .2f;
+
+	//these are variables so that we dont have floating numbers and they are very easy to change
+	//they are equal to the variables lower in my code
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+   	void Update () {
+
+	//all of the below code with the variables is equal to the values lying above	
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            gameObject.transform.Translate(-horizontalSpeed, 0, 0);
+        }
+       
+        if (Input.GetKey(KeyCode.D))
+        {
+            gameObject.transform.Translate(horizontalSpeed, 0, 0);
+        }
+       
+        if (Input.GetKey(KeyCode.W))
+        {
+            gameObject.transform.Translate(0, verticalSpeed, 0);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            gameObject.transform.Translate(0, -verticalSpeed, 0);
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            gameObject.transform.Translate(0, 0, -zSpeed);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            gameObject.transform.Translate(0, 0, zSpeed);
+        }
+        
+	}
+}
+
